@@ -32,13 +32,7 @@ export default function Nav() {
             Open to work
           </span>
 
-          <button
-            type="button"
-            className="nav-toggle"
-            aria-expanded={open}
-            aria-label={open ? "Close menu" : "Open menu"}
-            onClick={() => setOpen((v) => !v)}
-          >
+          
             {open ? (
               <svg viewBox="0 0 24 24">
                 <path d="M6 6l12 12M18 6L6 18" />
