@@ -250,7 +250,7 @@ a {
   border: 1px solid var(--rule);
   border-radius: 999px;
   font-size: 0.8125rem;
-  color: var(--ink-soft);
+  color: var(--signal);
 }
 
 .hero-badge .dot {
