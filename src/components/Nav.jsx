@@ -29,7 +29,6 @@ export default function Nav() {
           </ul>
 
           <span className="nav-pill">
-            <span className="dot" aria-hidden="true" />
             Open to work
           </span>
 
