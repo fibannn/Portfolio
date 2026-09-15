@@ -5,7 +5,7 @@ export default function Contact() {
     <footer id="contact">
       <div className="contact shell">
         <h2 className="contact-lead">
-          Open to quantitative research, data, and product roles.
+          Always open for new roles and collaborations.
         </h2>
 
         <a className="contact-email" href={`mailto:${profile.email}`}>

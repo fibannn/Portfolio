@@ -32,7 +32,12 @@ export default function Hero() {
   );
 
   return (
-    <header className="hero shell">
+    <header className="hero shell" id="top">
+      <span className="hero-badge">
+        <span className="dot" aria-hidden="true" />
+        Open to quant research, data, and product roles
+      </span>
+
       <h1 className="hero-name">
         <span className="wide">{profile.first}</span>
         <span className="hero-line">
@@ -59,6 +64,13 @@ export default function Hero() {
         <a href={profile.linkedin} target="_blank" rel="noreferrer">
           LinkedIn
         </a>
+      </p>
+
+      <p className="scroll-cue">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 4v16M6 14l6 6 6-6" />
+        </svg>
+        Scroll for the work
       </p>
     </header>
   );
