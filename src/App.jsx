@@ -1,4 +1,6 @@
+import Nav from "./components/Nav.jsx";
 import Hero from "./components/Hero.jsx";
+import Marquee from "./components/Marquee.jsx";
 import Work from "./components/Work.jsx";
 import Practice from "./components/Practice.jsx";
 import Background from "./components/Background.jsx";
@@ -10,7 +12,9 @@ export default function App() {
 
   return (
     <>
+      <Nav />
       <Hero />
+      <Marquee />
       <main>
         <Work />
         <Practice />
