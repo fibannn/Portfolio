@@ -34,7 +34,7 @@ export default function Hero() {
   return (
     <header className="hero shell" id="top">
       <span className="hero-badge">
-        Open to quant research, data, and product roles
+       
       </span>
 
       <h1 className="hero-name">
