@@ -1,3 +1,4 @@
+import { trackEvent } from "../lib/analytics.js";
 import { useState } from "react";
 import { profile } from "../data/content.js";
 import useTheme from "../lib/useTheme.js";
@@ -30,13 +31,29 @@ export default function Nav() {
             ))}
           </ul>
 
-          <span className="nav-pill">
-            Open to work
-          </span>
+          <div className="nav-actions">
+  <span className="nav-pill">
+    <span>Open to work</span>
+    
+      href={`mailto:${profile.email}`}
+      onClick={() => trackEvent("nav_email_click")}
+    >
+      Email
+    </a>
+    
+      href={profile.linkedin}
+      target="_blank"
+      rel="noreferrer"
+      onClick={() => trackEvent("nav_linkedin_click")}
+    >
+      LinkedIn
+    </a>
+  </span>
 
-          <button type="button" className="theme-toggle" onClick={toggleTheme}>
-            {theme === "dark" ? "Light mode" : "Dark mode"}
-          </button>
+  <button type="button" className="theme-toggle" onClick={toggleTheme}>
+    {theme === "dark" ? "Light mode" : "Dark mode"}
+  </button>
+</div>
 
           <button
             type="button"
