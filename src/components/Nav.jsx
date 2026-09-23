@@ -1,7 +1,7 @@
-import { trackEvent } from "../lib/analytics.js";
 import { useState } from "react";
 import { profile } from "../data/content.js";
 import useTheme from "../lib/useTheme.js";
+import { trackEvent } from "../lib/analytics.js";
 
 const LINKS = [
   { href: "#work", label: "Work" },
@@ -32,28 +32,28 @@ export default function Nav() {
           </ul>
 
           <div className="nav-actions">
-  <span className="nav-pill">
-    <span>Open to work</span>
-    
-      href={`mailto:${profile.email}`}
-      onClick={() => trackEvent("nav_email_click")}
-    >
-      Email
-    </a>
-    
-      href={profile.linkedin}
-      target="_blank"
-      rel="noreferrer"
-      onClick={() => trackEvent("nav_linkedin_click")}
-    >
-      LinkedIn
-    </a>
-  </span>
+            <span className="nav-pill">
+              <span>Open to work</span>
+              <a
+                href={`mailto:${profile.email}`}
+                onClick={() => trackEvent("nav_email_click")}
+              >
+                Email
+              </a>
+              <a
+                href={profile.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => trackEvent("nav_linkedin_click")}
+              >
+                LinkedIn
+              </a>
+            </span>
 
-  <button type="button" className="theme-toggle" onClick={toggleTheme}>
-    {theme === "dark" ? "Light mode" : "Dark mode"}
-  </button>
-</div>
+            <button type="button" className="theme-toggle" onClick={toggleTheme}>
+              {theme === "dark" ? "Light mode" : "Dark mode"}
+            </button>
+          </div>
 
           <button
             type="button"
