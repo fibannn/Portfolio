@@ -4,7 +4,7 @@ export const profile = {
   location: "Bangalore, India",
   email: "fbnmubarak@gmail.com",
   phone: "+91 81369 48837",
-  linkedin: "https://www.linkedin.com/in/fiban-mubarak/",
+  linkedin: "https://www.linkedin.com/in/fiban-mubarak/
   github: "https://github.com/fibannn",
   intro:
     "Quantitative researcher and data analyst based in Bangalore. I build trading strategy backtesters, test them for overfitting, and validate the market data behind them. I also design web and mobile interfaces.",
