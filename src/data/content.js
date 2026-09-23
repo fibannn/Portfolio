@@ -5,8 +5,9 @@ export const profile = {
   email: "fbnmubarak@gmail.com",
   phone: "+91 81369 48837",
   linkedin: "https://www.linkedin.com/in/fibanmubarak",
+  github: "https://github.com/fibannn",
   intro:
-    "I build and stress-test systems that have to survive contact with real data. Most of my time goes to quantitative strategy research — writing backtesters, hunting for the ways they lie to me, and fixing them.",
+    "Quantitative researcher and data analyst based in Bangalore. I build trading strategy backtesters, test them for overfitting, and validate the market data behind them. I also design web and mobile interfaces.",
 };
 
 export const projects = [
@@ -18,7 +19,7 @@ export const projects = [
     summary:
       "A five-timeframe EMA trend-alignment strategy, ported out of TradingView Pine Script into Python so it could be tested properly. The original took seconds per 18-month run; with the hot loop compiled through Numba JIT it settles around two milliseconds, which changes what kinds of questions you can afford to ask.",
     detail:
-      "Parameter search runs on Optuna's TPE sampler across an eleven-dimensional space — EMA lengths, timeframe stack, entry confirmation, wick tolerance, take-profit and stop distances. Final candidates get re-checked with exhaustive grid search rather than trusted from the Bayesian run alone.",
+      "Parameter search runs on Optuna's TPE sampler across an eleven-dimensional space: EMA lengths, timeframe stack, entry confirmation, wick tolerance, take-profit and stop distances. Final candidates get re-checked with exhaustive grid search rather than trusted from the Bayesian run alone.",
     stats: [
       { label: "Backtests run", value: "30,000+" },
       { label: "Search dimensions", value: "11" },
@@ -32,7 +33,7 @@ export const projects = [
     scope: "Validation tooling",
     headline: "18/18 profitable months",
     summary:
-      "The most useful thing this work produced was a rejection. One configuration looked flawless across six months — zero losing months — and fell apart on the full eighteen, losing in eight of them. Catching that meant building tools whose job is to disagree with the optimiser.",
+      "The most useful thing this work produced was a rejection. One configuration looked flawless across six months (zero losing months) and fell apart on the full eighteen, losing in eight of them. Catching that meant building tools whose job is to disagree with the optimiser.",
     detail:
       "A calendar-time train/test split reports metrics for every parameter combination in the grid, not just the winner. A sensitivity sweep walks EMA length, wick ratio and bounce multiplier through their neighbourhoods to see whether performance sits on a plateau or a spike. A regime split scores trending, ranging and high-volatility periods separately. The replacement configuration was profitable in all eighteen months.",
     stats: [
@@ -50,7 +51,7 @@ export const projects = [
     summary:
       "Ten-plus candidate filters tested against the base strategy: ATR volatility gating, ADX trend strength, volume confirmation, consecutive-loss circuit breakers, trend persistence, cross-asset confirmation. Two survived.",
     detail:
-      "Volatility filtering and close-versus-wick stop confirmation together lifted net profit from 7,420 to 12,792 points and cut maximum drawdown from 286.5 to 208 points. The other eight were removed — a filter that improves the headline number without improving the shape of the equity curve is usually just curve-fitting with extra steps.",
+      "Volatility filtering and close-versus-wick stop confirmation together lifted net profit from 7,420 to 12,792 points and cut maximum drawdown from 286.5 to 208 points. The other eight were removed. A filter that improves the headline number without improving the shape of the equity curve is usually just curve-fitting with extra steps.",
     stats: [
       { label: "Filters tested", value: "10+" },
       { label: "Net profit", value: "7,420 → 12,792 pts" },
@@ -81,7 +82,7 @@ export const projects = [
     summary:
       "Minute-level OHLCV across two assets and eighteen months, with automated integrity checks for gaps, duplicates and impossible bars. Every strategy result above rests on this, which is why it gets its own attention.",
     detail:
-      "Broker feeds arrive in different shapes and different clocks — the gold data is semicolon-delimited on a fixed GMT+2 broker time, converted to IST. A cross-timezone alignment bug was quietly shifting bars between timeframes until it was found and fixed. Backtest fills are reconciled trade-by-trade against live TradingView and OANDA execution data.",
+      "Broker feeds arrive in different shapes and different clocks. The gold data is semicolon-delimited on a fixed GMT+2 broker time, converted to IST. A cross-timezone alignment bug was quietly shifting bars between timeframes until it was found and fixed. Backtest fills are reconciled trade-by-trade against live TradingView and OANDA execution data.",
     stats: [
       { label: "Bars processed", value: "1,300,000+" },
       { label: "Assets", value: "ETH-USD, XAU-USD" },
@@ -112,7 +113,7 @@ export const projects = [
     summary:
       "A Twitter sentiment analysis pipeline, and an AI-assisted chatbot giving basic first-aid guidance.",
     detail:
-      "Both predate the trading work and are where the Python habits came from — collecting messy input, cleaning it, and getting something useful out the other end.",
+      "Both predate the trading work and are where the Python habits came from: collecting messy input, cleaning it, and getting something useful out the other end.",
     stats: [{ label: "Domain", value: "NLP, classification" }],
     tags: ["Python", "NLP"],
   },
@@ -156,6 +157,6 @@ export const background = [
 
 export const credentials = [
   "Google Data Analytics Certificate",
-  "Data Analytics Job Simulation — Deloitte",
-  "Product Simulation Training — Lloyds Banking Group",
+  "Data Analytics Job Simulation: Deloitte",
+  "Product Simulation Training: Lloyds Banking Group",
 ];

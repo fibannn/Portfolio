@@ -10,6 +10,8 @@
   --rule: rgba(246, 243, 231, 0.14);
   --signal: #e8a33d;
   --warn: #e8604a;
+  --nav-bg: rgba(11, 11, 9, 0.72);
+  color-scheme: dark;
 
   --measure: 62ch;
   --page-x: clamp(1.25rem, 5vw, 5.5rem);
@@ -26,6 +28,19 @@
   --step-4: clamp(3.4rem, 1rem + 11vw, 8.5rem);
 
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* Light theme. Amber is darkened so it keeps contrast on the pale paper. */
+:root[data-theme="light"] {
+  --paper: #f6f3e7;
+  --wash: #ebe6d2;
+  --ink: #17160f;
+  --ink-soft: #57523f;
+  --rule: rgba(23, 22, 15, 0.18);
+  --signal: #8f5606;
+  --warn: #b73a24;
+  --nav-bg: rgba(246, 243, 231, 0.8);
+  color-scheme: light;
 }
 
 /* ==========================================================================
@@ -239,26 +254,6 @@ a {
 .hero-meta a:hover {
   color: var(--ink);
   border-color: var(--ink);
-}
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin-bottom: clamp(1.75rem, 4vw, 2.5rem);
-  padding: 0.45rem 0.9rem 0.45rem 0.7rem;
-  border: 1px solid var(--rule);
-  border-radius: 0px;
-  font-size: 0.8125rem;
-  color: var(--signal);
-}
-
-.hero-badge .dot {
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-  background: var(--signal);
-  box-shadow: 0 0 0 3px rgba(232, 163, 61, 0.18);
 }
 
 .scroll-cue {
@@ -585,7 +580,7 @@ a {
   height: var(--nav-h);
   display: flex;
   align-items: center;
-  background: rgba(11, 11, 9, 0.72);
+  background: var(--nav-bg);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--rule);
 }
@@ -629,7 +624,7 @@ a {
   gap: 0.5rem;
   padding: 0.4rem 0.8rem;
   border: 1px solid var(--rule);
-  border-radius: 999px;
+  border-radius: 0;
   font-size: 0.8125rem;
   color: var(--ink-soft);
 }
@@ -646,7 +641,7 @@ a {
   width: 2.25rem;
   height: 2.25rem;
   border: 1px solid var(--rule);
-  border-radius: 50%;
+  border-radius: 0;
   background: none;
   color: var(--ink);
   align-items: center;
@@ -680,43 +675,82 @@ a {
 }
 
 /* ==========================================================================
-   Marquee
+   Theme toggle, cookie consent, footer links
    ========================================================================== */
 
-.marquee {
-  overflow: hidden;
-  border-top: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
-  padding-block: 0.85rem;
+.theme-toggle,
+.consent-actions button {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--rule);
+  border-radius: 0;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.8125rem;
+  cursor: pointer;
+  transition: border-color 0.2s var(--ease);
 }
 
-.marquee-track {
-  display: flex;
-  width: max-content;
-  gap: 2.5rem;
-  animation: marquee-scroll 26s linear infinite;
+.theme-toggle:hover,
+.consent-actions button:hover {
+  border-color: var(--ink);
 }
 
-.marquee-track span {
-  display: inline-flex;
-  align-items: center;
-  gap: 2.5rem;
+.consent {
+  position: fixed;
+  inset: auto 1rem 1rem 1rem;
+  z-index: 60;
+  max-width: 30rem;
+  padding: 1.25rem;
+  background: var(--wash);
+  border: 1px solid var(--rule);
+}
+
+.consent h2 {
+  font-family: var(--display);
+  font-variation-settings: "wdth" 85, "wght" 700;
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+.consent p {
   color: var(--ink-soft);
-  font-size: 0.875rem;
-  white-space: nowrap;
+  font-size: 0.9375rem;
 }
 
-.marquee-track .sep {
-  color: var(--rule);
+.consent p a {
+  border-bottom: 1px solid var(--rule);
 }
 
-@keyframes marquee-scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+.consent-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.consent-actions button {
+  flex: 1;
+  padding-block: 0.6rem;
+}
+
+.colophon-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+}
+
+.colophon-links button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.colophon-links a:hover,
+.colophon-links button:hover {
+  color: var(--ink);
 }
 
 /* ==========================================================================
@@ -724,7 +758,8 @@ a {
    ========================================================================== */
 
 @media (max-width: 760px) {
-  .nav-links {
+  .nav-links,
+  .nav-pill {
     display: none;
   }
 
@@ -780,14 +815,6 @@ a {
 
   .hero-mark path {
     stroke-dashoffset: 0;
-  }
-
-  .marquee-track {
-    animation: none;
-  }
-
-  .marquee {
-    overflow-x: auto;
   }
 
   .scroll-cue svg {

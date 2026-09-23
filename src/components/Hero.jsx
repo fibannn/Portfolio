@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { profile } from "../data/content.js";
 
-/* A fixed series — not market data, just a stable shape to smooth. */
+/* A fixed series (not market data), just a stable shape to smooth. */
 const SERIES = [
   62, 58, 64, 51, 56, 44, 49, 38, 45, 33, 39, 28, 34, 24, 30, 19, 25, 15, 21,
   12, 16,
@@ -33,10 +33,6 @@ export default function Hero() {
 
   return (
     <header className="hero shell" id="top">
-      <span className="hero-badge">
-       
-      </span>
-
       <h1 className="hero-name">
         <span className="wide">{profile.first}</span>
         <span className="hero-line">
@@ -62,6 +58,9 @@ export default function Hero() {
         <a href={`mailto:${profile.email}`}>{profile.email}</a>
         <a href={profile.linkedin} target="_blank" rel="noreferrer">
           LinkedIn
+        </a>
+        <a href={profile.github} target="_blank" rel="noreferrer">
+          GitHub
         </a>
       </p>
 

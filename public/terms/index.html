@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script>
+      (function () {
+        var t;
+        try { t = localStorage.getItem("theme"); } catch (e) {}
+        if (t !== "light" && t !== "dark") {
+          t = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        }
+        document.documentElement.dataset.theme = t;
+      })();
+    </script>
+<title>Terms of Service | Fiban Mubarak</title>
+<meta name="description" content="Terms for using the Fiban Mubarak portfolio site, including content ownership, external links and liability." />
+<link rel="canonical" href="https://fibannn.github.io/Portfolio/terms/" />
+<link rel="icon" type="image/svg+xml" href="https://fibannn.github.io/Portfolio/favicon.svg" />
+<style>
+:root{--paper:#0b0b09;--ink:#f6f3e7;--soft:#948d76;--rule:rgba(246,243,231,.18);--signal:#e8a33d;color-scheme:dark}
+:root[data-theme="light"]{--paper:#f6f3e7;--ink:#17160f;--soft:#57523f;--rule:rgba(23,22,15,.18);--signal:#8f5606;color-scheme:light}
+body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.65 "IBM Plex Sans",system-ui,sans-serif}
+main{max-width:44rem;margin:0 auto;padding:4rem 1.25rem 5rem}
+h1{font-size:clamp(2rem,6vw,3rem);line-height:1.1;margin:0 0 1rem}h2{font-size:1.25rem;margin:2rem 0 .5rem}
+p,li{color:var(--soft)}a{color:var(--ink);border-bottom:1px solid var(--rule);text-decoration:none}
+a:focus-visible{outline:2px solid var(--signal);outline-offset:3px}nav{margin-bottom:2.5rem}
+</style>
+</head>
+<body>
+<main>
+<nav><a href="https://fibannn.github.io/Portfolio/">Back to portfolio</a></nav>
+<h1>Terms of Service</h1><p>Last updated: 24 September 2026</p>
+<h2>Use of this site</h2><p>This site presents the work and background of Fiban Mubarak. You may browse it and link to it freely.</p>
+<h2>Content</h2><p>Text, design and code on this site belong to Fiban Mubarak unless stated otherwise. Please do not republish them as your own.</p>
+<h2>Research results</h2><p>Backtest results and trading research described here are shown to demonstrate method and skill. They are not financial advice, and past results do not predict future performance.</p>
+<h2>External links</h2><p>Links to other sites are provided for convenience. Their content is outside the owner's control.</p>
+<h2>Liability</h2><p>The site is provided as is. The owner is not liable for losses arising from its use.</p>
+<h2>Contact</h2><p>Questions: <a href="mailto:fbnmubarak@gmail.com">fbnmubarak@gmail.com</a>.</p>
+</main>
+</body>
+</html>

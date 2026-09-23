@@ -11,7 +11,7 @@ export default function Practice() {
         What I work on
       </h2>
       <p className="band-intro">
-        Three tracks that keep feeding each other — the research needs the data
+        Three tracks that keep feeding each other: the research needs the data
         work to be trustworthy, and the design work is where the results have to
         become legible to someone else.
       </p>

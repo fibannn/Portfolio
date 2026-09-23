@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { profile } from "../data/content.js";
+import useTheme from "../lib/useTheme.js";
 
 const LINKS = [
   { href: "#work", label: "Work" },
@@ -10,6 +11,7 @@ const LINKS = [
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
+  const [theme, toggleTheme] = useTheme();
   const initials = `${profile.first[0]}${profile.last[0]}`;
 
   return (
@@ -31,6 +33,10 @@ export default function Nav() {
           <span className="nav-pill">
             Open to work
           </span>
+
+          <button type="button" className="theme-toggle" onClick={toggleTheme}>
+            {theme === "dark" ? "Light mode" : "Dark mode"}
+          </button>
 
           <button
             type="button"

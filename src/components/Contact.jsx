@@ -1,4 +1,5 @@
 import { profile } from "../data/content.js";
+import { trackEvent } from "../lib/analytics.js";
 
 export default function Contact() {
   return (
@@ -8,7 +9,9 @@ export default function Contact() {
           Always open for new roles and collaborations.
         </h2>
 
-        <a className="contact-email" href={`mailto:${profile.email}`}>
+        <a className="contact-email" href={`mailto:${profile.email}`}
+          onClick={() => trackEvent("contact_email_click")}
+        >
           {profile.email}
         </a>
 
@@ -16,8 +19,16 @@ export default function Contact() {
           <a href={`tel:${profile.phone.replace(/\s/g, "")}`} className="numeric">
             {profile.phone}
           </a>
-          <a href={profile.linkedin} target="_blank" rel="noreferrer">
+          <a
+            href={profile.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            onClick={() => trackEvent("contact_linkedin_click")}
+          >
             LinkedIn
+          </a>
+          <a href={profile.github} target="_blank" rel="noreferrer">
+            GitHub
           </a>
           <span>{profile.location}</span>
         </p>
@@ -27,7 +38,16 @@ export default function Contact() {
         <span>
           {profile.first} {profile.last}
         </span>
-        <span>Anybody and IBM Plex Sans. Built with React and Vite.</span>
+        <span className="colophon-links">
+          <a href={`${import.meta.env.BASE_URL}privacy/`}>Privacy Policy</a>
+          <a href={`${import.meta.env.BASE_URL}terms/`}>Terms of Service</a>
+          <button
+            type="button"
+            onClick={() => window.dispatchEvent(new Event("open-cookie-settings"))}
+          >
+            Cookie settings
+          </button>
+        </span>
       </div>
     </footer>
   );
