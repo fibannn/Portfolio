@@ -1,0 +1,25 @@
+.cursor-circle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;              /* white + difference = negative/invert */
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transition: width 0.25s ease, height 0.25s ease, opacity 0.2s ease;
+  will-change: transform;
+}
+
+.cursor-circle.grow {
+  width: 80px;
+  height: 80px;
+}
+
+/* Hide the native cursor on devices with a mouse */
+@media (pointer: fine) {
+  html, body, a, button { cursor: none; }
+}
