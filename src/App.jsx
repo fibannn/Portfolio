@@ -5,6 +5,7 @@ import Work from "./components/Work.jsx";
 import Practice from "./components/Practice.jsx";
 import Background from "./components/Background.jsx";
 import Contact from "./components/Contact.jsx";
+import CursorCircle from "./components/CursorCircle.jsx";
 import useSmoothScroll from "./lib/useSmoothScroll.js";
 
 export default function App() {
@@ -12,6 +13,7 @@ export default function App() {
 
   return (
     <>
+      <CursorCircle />
       <Nav />
       <Hero />
       <main>
